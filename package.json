@@ -1,0 +1,8 @@
+{
+  "name": "nekomimi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kf07/mimi.git",
+  "author": "furus <furusu0715@gmail.com>",
+  "license": "MIT"
+}
