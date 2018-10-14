@@ -3,12 +3,9 @@ export class Hello {
     this.say(name);
   }
 
-  say(name) {
-    console.log(`Hello ${name} World!`);
+  say() {
+    console.log(`Hello ${this.name} World!`);
   }
-
-
-
 }
 
 export default new Hello('Nekomimi');
