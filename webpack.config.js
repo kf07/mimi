@@ -44,7 +44,7 @@ module.exports = {
         test: /\.css$/,
         exclude:/node_modules/,
         //loaderを複数使用する場合はuseを使います
-        use:[MiniCSSExtractPlugin.loader,'css-loader']
+        use:[MiniCSSExtractPlugin.loader,'css-loader','postcss-loader']
       }
     ]
   },
