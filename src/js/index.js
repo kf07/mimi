@@ -6,6 +6,9 @@ export class Hello {
   say(name) {
     console.log(`Hello ${name} World!`);
   }
+
+
+
 }
 
 export default new Hello('Nekomimi');
