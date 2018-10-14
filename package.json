@@ -10,7 +10,8 @@
     "serve": "webpack-dev-server --config webpack.config.js",
     "lint:js": "eslint ./src/js/*.{js,jsx}",
     "prettier": "prettier --write ./src/js/*.{js,jsx}",
-    "flow": "flow"
+    "flow": "flow",
+    "lint:css": "stylelint ./src/css/*.css"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
