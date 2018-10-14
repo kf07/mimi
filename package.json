@@ -10,12 +10,13 @@
     "serve": "webpack-dev-server --config webpack.config.js",
     "lint:js": "eslint ./src/js/*.{js,jsx}",
     "prettier": "prettier --write ./src/js/*.{js,jsx}",
-    "flow":"flow"
+    "flow": "flow"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "eslint": "^5.7.0",
@@ -28,6 +29,8 @@
     "flow-bin": "^0.83.0",
     "html-webpack-plugin": "^3.2.0",
     "prettier": "^1.14.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
