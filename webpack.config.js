@@ -27,11 +27,15 @@ module.exports = {
   module: {
     rules: [
       {
-        //ルールを適用するファイルの正規表現
         test: /\.(js|jsx)$/,
-        //node_modules以下のファイルには適用しないようにします
         exclude: /node_modules/,
+        enforce: 'pre',
         //使用する loader
+        loader: 'eslint-loader'
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         loader: 'babel-loader'
       }
     ]
