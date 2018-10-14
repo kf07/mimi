@@ -3,6 +3,8 @@ const path = require('path');
 const webpack = require('webpack');
 //html-webpack-pluginモジュールを読み込む
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+//mini-css-extract-pluginの追加
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 const src = path.join(__dirname, 'src');
 const dist = path.join(__dirname, 'dist');
@@ -37,6 +39,12 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        exclude:/node_modules/,
+        //loaderを複数使用する場合はuseを使います
+        use:[MiniCSSExtractPlugin.loader,'css-loader']
       }
     ]
   },
@@ -51,7 +59,10 @@ module.exports = {
     //HtmlWebpackPluginを追加
     new HtmlWebpackPlugin({
       template: path.resolve(src,'html/index.html')
-    })
+    }),
+    new MiniCSSExtractPlugin({
+      filename: 'app.css'
+    }) //MiniCSSExtractPlugin
   ],
   //sourceMappingの設定
   devtool: 'cheap-module-eval-source-map'
