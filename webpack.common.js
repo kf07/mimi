@@ -4,6 +4,8 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 const src = path.join(__dirname, 'src');
 
+const prodMode = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: path.resolve(src, 'js/render.jsx'),
   resolve: {
@@ -43,7 +45,7 @@ module.exports = {
       template: path.resolve(src, 'html/index.html')
     }),
     new MiniCSSExtractPlugin({
-      filename: 'app.css'
+      filename: prodMode ? 'app.min.css' : 'app.css'
     })
   ]
 };
