@@ -8,16 +8,16 @@ import Heading from './heading';
 import '../css/index.css';
 
 export class Render {
-  constructor(targetId: string){
+  constructor(targetId: string) {
     //コンポーネントを出力するDOMを取得
     const target = document.getElementById(targetId);
-    if(target != null){
+    if (target != null) {
       this.render(target);
     }
   }
 
   render(target: HTMLElement) {
-    ReactDOM.render(<Heading name="Nekomimi" />,target);
+    ReactDOM.render(<Heading name="Nekomimi" />, target);
   }
 }
 

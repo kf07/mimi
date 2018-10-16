@@ -42,9 +42,20 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude:/node_modules/,
+        exclude: /node_modules/,
         //loaderを複数使用する場合はuseを使います
-        use:[MiniCSSExtractPlugin.loader,'css-loader','postcss-loader']
+        use: [
+          MiniCSSExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]--[hash:base64:5]',
+            },
+          },
+          'postcss-loader',
+        ]
       }
     ]
   },
@@ -58,7 +69,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     //HtmlWebpackPluginを追加
     new HtmlWebpackPlugin({
-      template: path.resolve(src,'html/index.html')
+      template: path.resolve(src, 'html/index.html')
     }),
     new MiniCSSExtractPlugin({
       filename: 'app.css'

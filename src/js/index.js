@@ -1,12 +1,12 @@
 //@flow
 export class Hello {
   name: string;
-  constructor(name:string) {
+  constructor(name: string) {
     this.name = name;
     this.say();
   }
 
-  say():void {
+  say(): void {
     console.log(`Hello ${this.name} World!`);
   }
 }
